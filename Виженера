@@ -1,0 +1,88 @@
+
+Файл решения Microsoft Visual Studio, формат версии 12.00
+# Visual Studio Версия 16
+VisualStudioVersion = 16.0.30907.101
+Минимальное визуальное изменение =  10.0.40219.1
+Проект ("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ТолстиковаЕ (Виженера)", "ТолстиковаЕ (Виженера) \ТолстиковаЕ (Виженера).pyproj", "{1E38D803-58A1-4062-B06D-5AA890CEBD54}"
+Завершение проекта
+Глобальный
+	GlobalSection(SolutionConfigurationPlatforms) = Предварительное решение
+		Отладка любого процессора|= Отладка|Любой процессор
+		Любой выпуск процессора |= Выпуск | любого процессора
+	Завершение глобальной секции
+	Глобальная секция (ProjectConfigurationPlatforms) = Последующее решение
+		{1E38D803-58A1-4062-B06D-5AA890CEBD54}.Отладка|Любой процессор.ActiveCfg = Отладка|Любой процессор
+		{1E38D803-58A1-4062-B06D-5AA890CEBD54}.Отпустите |Любой процессор.ActiveCfg = Релиз | Любой процессор
+	Завершение глобальной секции
+	GlobalSection(SolutionProperties) = Предварительное решение
+		HideSolutionNode = FALSE
+	Завершение глобальной секции
+	Глобальная секция (ExtensibilityGlobals) = Последующее решение
+		SolutionGuid = {41A918A2-9387-4B34-9455-5DB3F6A0EBA2}
+	Завершение глобальной секции
+Конечный глобальный
+ 35  
+YuiaSultanova(Виженера)/YuiaSultanova(Виженера).pyproj
+@@ -0,0 +1,35 @@
+<Проект DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003 " ToolsVersion="4.0">
+ <Группа недвижимости>
+ <Условие конфигурации=" '$(Configuration)' == " ">Отладка</Configuration>
+ <schemaVersion>2.0</schemaVersion>
+ <ProjectGuid>1e38d803-58a1-4062-b06d-5aa890cebd54</ProjectGuid>
+ <Проектный дом>.</ProjectHome>
+ <Файл запуска>YuiaSultanova_Виженера_.py </StartupFile> Файл запуска
+ <Путь поиска>
+ </SearchPath>
+ <Рабочий каталог>.</Рабочий каталог>
+ <Путь вывода>.</OutputPath>
+ <Имя>Юиасултанова(Виженера)</Имя>
+ <Пространство имен>Юиасултанова(Виженера)</Пространство имен>
+ </PropertyGroup>
+ <Условие PropertyGroup=" '$(Конфигурация)' == 'Debug' ">
+ <Отладочные символы>верно</DebugSymbols>
+ <EnableUnmanagedDebugging>ложь</EnableUnmanagedDebugging>
+ </PropertyGroup>
+ <Условие группы свойств=" '$(Конфигурация)' == 'Release' ">
+ <Отладочные символы>верно</DebugSymbols>
+ <EnableUnmanagedDebugging>ложь</EnableUnmanagedDebugging>
+ </PropertyGroup>
+ <ItemGroup>
+ <Включить компиляцию="YuiaSultanova_Виженера_.py " />
+ </ItemGroup>
+ <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+ <!-- Раскомментируйте цель CoreCompile, чтобы включить команду сборки в
+ Visual Studio и укажите свои команды до и после сборки в
+ цели BeforeBuild и AfterBuild приведены ниже. -->
+ <!--<Имя цели="CoreCompile" />-->
+ <Имя цели="Перед построением">
+ </Цель>
+ <Имя цели="AfterBuild">
+ </Цель>
+</Проект>
+ 24  
+YuiaSultanova(Виженера)/YuiaSultanova_Виженера_.py
+@@ -0,0 +1,24 @@
+input = cryptMode("[E]Зашифровать|[D]Расшифровать: ").upper()
+в  не  крипторежиме , если ['E','D']:
+	print("ОШИБКА!"); raise SystemExit
+
+input = startMessage("Напишите сообщение на английском: ").upper()
+int = numberKeys(input("Сколько ключей?: "))
+
+= Список клавиш []
+диапазон  в  индексе  для (numberKeys):
+	 listKeys.append(input("Напишите ключевое слово["+str(index)+"]: ").upper())
+
+encryptDecrypt  def(режим, сообщение, ключи):
+	Список  ключей в  ключе  для:
+		финал = ""
+		len *= ключ (сообщение) // len(ключ) + 1
+		индекс  для символа  в  перечислении (сообщение):
+			'E' == режим , если:
+				ord = temp(символ) + ord(ключ [индекс])
+			ещё:
+				ord = temp(символ) - ord(ключ [индекс])+26
+			chr += окончательный (темп % 26 + ord('A'))
+		сообщение  =  окончательное
+	финал возвращения 
+print("финальное сообщение:",encryptDecrypt(cryptMode, startMessage, listKeys))
